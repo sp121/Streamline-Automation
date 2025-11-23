@@ -34,7 +34,7 @@
     <!-- NAVBAR -->
     <nav class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <img src="logo.jpg" alt="Company Logo" />
+       <img src="logo.jpg" alt="Company Logo" class="logo" />
         <div>
           <a href="#" class="text-xl font-semibold">Streamline Automation</a>
           <div class="text-xs text-slate-500">ERP • DB Scaling • IT Solutions</div>
@@ -234,8 +234,17 @@
           this.msg = {name:'',email:'',message:''};
         }
       }
+
+      
     }).mount('#app')
   </script>
+  <style>
+      .logo {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+}
 
+    </style>
 </body>
 </html>
