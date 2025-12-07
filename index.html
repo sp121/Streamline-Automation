@@ -1,159 +1,411 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Streamline Automation | ERP • IT Solutions • Cloud & DevOps</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Streamline Automation — ERP & IT Solutions</title>
+  <meta name="description" content="Streamline Automation — ERP systems, database scaling, and complete IT solutions.">
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{
+      --blue-1:#0a1a2f; /* darkest */
+      --blue-2:#123a63;
+      --blue-3:#bfa76f;
+      --muted:#6b7280;
+      --glass: rgba(255,255,255,0.7);
+      --maxw:1100px;
+      --radius:14px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#f7fbff 0%, #ffffff 100%);color:#0f1724;line-height:1.5}
+
+    header{background:transparent;padding:20px 16px;position:sticky;top:0;backdrop-filter:blur(6px);z-index:50}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+
+    /* NAV */
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:56px;height:56px;object-fit:contain;border-radius:8px}
+    .brand .title{font-weight:700;font-size:18px}
+    .navlinks{display:flex;gap:18px;align-items:center}
+    .navlinks a{color:var(--muted);text-decoration:none;font-weight:600}
+    .cta{background:linear-gradient(90deg,var(--blue-2),var(--blue-3));color:white;padding:9px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:56px 0}
+    .hero-left{max-width:700px}
+    .eyebrow{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--blue-1);margin-bottom:14px}
+    h1{font-size:36px;margin:0 0 12px}
+    p.lead{color:var(--muted);margin:0 0 22px}
+    .hero-cta{display:flex;gap:12px}
+    .card{background:white;border-radius:16px;padding:22px;box-shadow:0 8px 20px rgba(15,23,36,0.06)}
+
+    /* SERVICES */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:36px 0}
+    .service{padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(102,179,230,0.12),rgba(255,255,255,0.6));min-height:140px}
+    .service h3{margin:8px 0 6px}
+    .service p{color:var(--muted);margin:0}
+
+    /* ABOUT */
+    .about{display:flex;gap:22px;align-items:center;margin:26px 0}
+    .about img{width:100%;border-radius:12px;max-width:320px}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:18px;margin:28px 0}
+    form{display:flex;flex-direction:column;gap:12px}
+    input,textarea,select{padding:12px;border-radius:8px;border:1px solid #e6eef8;font-size:14px}
+    button{padding:12px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--blue-1),var(--blue-2));color:#fff;font-weight:700}
+
+    footer{padding:30px 0;color:var(--muted);border-top:1px solid #eef4fb;margin-top:40px}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .contact-grid{grid-template-columns:1fr}
+      .services{grid-template-columns:1fr}
+    }
+    /* Enhanced modern design additions */
+  .card{border-radius:20px;box-shadow:0 10px 28px rgba(15,23,36,0.08);} 
+  .service{border-radius:18px;background:linear-gradient(180deg,rgba(102,179,230,0.18),rgba(255,255,255,0.9));padding:22px;transition:all .25s ease;}
+  .service:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,0.08);} 
+  h2{font-size:2.4rem;background:linear-gradient(90deg,#004e92,#4286f4);-webkit-background-clip:text;color:transparent;}
+  /* Pro Box Styling */
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 40px 0 20px;
+    text-align: center;
+    background: linear-gradient(90deg,#0058b8,#2aa7ff);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .pro-box {
+    background: #ffffffee;
+    border-radius: 18px;
+    padding: 28px;
+    margin: 20px 0;
+    border: 1px solid rgba(0,90,200,0.12);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+    transition: all .25s ease;
+  }
+  .pro-box:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  }
+.tech-icon { width:48px;height:48px;margin-bottom:12px; }
+</style>
 </head>
 <body>
-
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-content">
-      <div class="logo-area">
-        <img src="logo.png" class="logo-img" alt="Streamline Automation Logo" />
-        <span class="company-name">Streamline Automation</span>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <!-- Logo: replace with the provided file name. The developer placed the logo at /mnt/data/logo.png.jpg during upload. When you deploy, put the logo file in the same folder and name it "logo.png.jpg" or update the src below. -->
+        <img src="logo.png.jpg" alt="Streamline Automation logo">
+        <div>
+          <div class="title">Streamline Automation</div>
+          <div style="font-size:12px;color:var(--muted);">ERP • DB Scaling • IT Solutions</div>
+        </div>
       </div>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#technology">Technology</a></li>
-        <li><a href="#whyus">Why Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+
+      <nav class="navlinks">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#contact">Get a Quote</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>ERP • CRM • IT Automation Experts</h1>
-    <p>We design, build & scale enterprise systems using modern technologies and cloud infrastructure.</p>
-    <a href="#contact" class="btn-primary">Get in Touch</a>
-  </section>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <span class="eyebrow">Enterprise IT & Automation</span>
+        <h1>We build scalable ERP and database solutions that just work.</h1>
+        <p class="lead">From design and development to deployment and managed services — Streamline Automation helps businesses automate processes, scale databases, and run reliable systems.</p>
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <h2>Our Services</h2>
+        <div class="hero-cta">
+          <a class="cta" href="#contact">Request Proposal</a>
+          <a href="#services" style="padding:10px 14px;border-radius:10px;background:#eef6ff;font-weight:700;color:var(--blue-1);text-decoration:none">View Services</a>
+        </div>
 
-    <div class="service-grid">
+        <div style="display:flex;gap:10px;margin-top:18px;color:var(--muted);font-size:14px">
+          <div class="card" style="display:flex;gap:12px;align-items:center;">
+            <div style="font-weight:800;font-size:18px;color:var(--blue-2)">250+</div>
+            <div>
+              <div style="font-weight:700">Projects delivered</div>
+              <div style="color:var(--muted);font-size:13px">ERP, integrations, and automation</div>
+            </div>
+          </div>
 
-      <div class="service-card">
-        <h3>ERP Development & Customization</h3>
-        <p>End-to-end ERP implementation, automation and scaling.</p>
-        <ul>
-          <li>Frappe / ERPNext</li>
-          <li>Odoo ERP</li>
-          <li>SAP Business One</li>
-          <li>Custom Python ERP</li>
+          <div class="card" style="display:flex;gap:12px;align-items:center;">
+            <div style="font-weight:800;font-size:18px;color:var(--blue-2)">99.9%</div>
+            <div>
+              <div style="font-weight:700">Uptime & Support</div>
+              <div style="color:var(--muted);font-size:13px">Monitoring & managed deployments</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Quick Quote</h3>
+          <p style="margin:0 0 12px;color:var(--muted)">Tell us a bit about your project and we will get back in 1 business day.</p>
+          <form id="quickQuote" onsubmit="return handleQuick(event)">
+            <input name="name" placeholder="Your name" required>
+            <input name="email" placeholder="Email" type="email" required>
+            <select name="service" required>
+              <option value="">Select service</option>
+              <option>ERP Implementation</option>
+              <option>Database Scaling</option>
+              <option>Custom Development</option>
+              <option>Managed Services</option>
+            </select>
+            <button type="submit">Send request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <div class="services">
+        <div class="service card">
+          <h3>ERP Implementation</h3>
+          <p>Design, customize, and deploy ERP systems (Frappe/ERPNext, Odoo, SAP, Microsoft Dynamics and more) tailored to your process.</p>
+        </div>
+        <div class="service card">
+          <h3>Database Scaling & Optimization</h3>
+          <p>Performance tuning, sharding, replication, and cloud migrations to keep systems fast at scale.</p>
+        </div>
+        <div class="service card">
+          <h3>Automation & Integrations</h3>
+          <p>ETL, APIs, middleware, and automation to connect systems and reduce manual work.</p>
+        </div>
+        <div class="service card">
+          <h3>Web & App Development</h3>
+          <p>Frontend and backend development for web and mobile apps — progressive web apps, single-page apps, and native-like experiences.</p>
+        </div>
+        <div class="service card">
+          <h3>Cloud & Infrastructure</h3>
+          <p>Cloud architecture, containerization, CI/CD, monitoring, and managed hosting for resilient production systems.</p>
+        </div>
+        <div class="service card">
+          <h3>Managed Services</h3>
+          <p>24/7 support, monitoring, backups, and long-term maintenance for enterprise systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="technologies">
+      <h2><div class="section-title">Technologies & Platforms</div></h2>
+      <div class="card" style="padding:18px;margin-top:12px">
+        <h3 style="margin:6px 0">ERP Platforms</h3>
+        <p style="color:var(--muted);margin:6px 0">Frappe / ERPNext, Odoo, SAP, Microsoft Dynamics, and custom ERP solutions.</p>
+
+        <h3 style="margin:12px 0 6px">Frontend</h3>
+        <p style="color:var(--muted);margin:6px 0">React, Vue, Angular — modern SPA frameworks we use for fast, interactive interfaces.</p>
+
+        <h3 style="margin:12px 0 6px">Backend</h3>
+        <p style="color:var(--muted);margin:6px 0">Python (Django / Flask), Node.js (Express), Java (Spring), Go — scalable APIs and services.</p>
+
+        <h3 style="margin:12px 0 6px">Infrastructure & DevOps</h3>
+        <p style="color:var(--muted);margin:6px 0">AWS, Azure, GCP, Docker, Kubernetes, CI/CD pipelines, monitoring & observability.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Streamline Automation</h2>
+      <div class="about">
+        <div>
+          <p style="color:var(--muted);max-width:640px">Streamline Automation is focused on building reliable enterprise systems. We combine deep experience in ERP, cloud infrastructure, and software engineering to deliver solutions that reduce manual effort and let teams scale confidently.</p>
+
+          <ul style="color:var(--muted)">
+            <li>Custom ERP development and deployment</li>
+            <li>Database architecture & scaling</li>
+            <li>Process automation and data operations</li>
+          </ul>
+        </div>
+        <img src="logo.png.jpg" alt="logo preview">
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div>
+          <p style="color:var(--muted)">Prefer a simple contact form? You can also create a Google Form and paste its URL below — we included a button that will open the form in a new tab.</p>
+
+          <!-- Replace the link in data-google-form with your Google Form URL if you want visitors to fill a hosted form -->
+          <p style="margin:10px 0">
+            <a id="googleFormBtn" href="#" target="_blank" style="display:inline-block;padding:10px 14px;border-radius:10px;background:#eef6ff;color:var(--blue-2);text-decoration:none;font-weight:700">Open Google Form</a>
+          </p>
+
+          <div class="card">
+            <h3>Office</h3>
+            <p style="margin:6px 0;color:var(--muted)">Surat, Gujarat, India</p>
+            <p style="margin:6px 0;color:var(--muted)">Email: <a href="mailto:info.streamline.automation@gmail.com">info.streamline.automation@gmail.com</a></p>
+            <!-- Phone removed as requested -->
+            <div style="margin-top:10px;display:flex;gap:10px;align-items:center">
+              <!-- Social icons: replace href="#" with your links. You can provide the links and I'll insert them. -->
+              <a id="social_facebook" href="#" title="Facebook" aria-label="Facebook" style="text-decoration:none">🔵 Facebook</a>
+              <a id="social_twitter" href="#" title="Twitter" aria-label="Twitter" style="text-decoration:none">🐦 Twitter</a>
+              <a id="social_linkedin" href="#" title="LinkedIn" aria-label="LinkedIn" style="text-decoration:none">🔗 LinkedIn</a>
+              <a id="social_github" href="#" title="GitHub" aria-label="GitHub" style="text-decoration:none">🐙 GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <h3>Get in touch</h3>
+            <!-- This form does not submit to a server. Replace the form action to integrate with your backend or use the Google Form link above. -->
+            <form id="contactForm" onsubmit="return handleContact(event)">
+              <input name="name" placeholder="Full name" required>
+              <input name="email" type="email" placeholder="Email address" required>
+              <input name="company" placeholder="Company (optional)">
+              <textarea name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+              <button type="submit">Send message</button>
+            </form>
+            <small style="color:var(--muted)">Or email us at <a href="mailto:info.streamline.automation@gmail.com">info.streamline.automation@gmail.com</a></small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech-stack" style="margin-top:60px">
+      <h2 style="text-align:center;margin-bottom:30px">Technology Stack</h2>
+      <div class="tech-grid">
+        <div class="tech-card animated-card">
+          <div class="tech-icon">⚛️</div>
+          <h3>Frontend</h3>
+          <p>React, Vue, Angular, Next.js, Tailwind CSS</p>
+        </div>
+        <div class="tech-card animated-card">
+          <div class="tech-icon">🖥️</div>
+          <h3>Backend</h3>
+          <p>Python, Django, Node.js, PHP, Java Spring Boot</p>
+        </div>
+        <div class="tech-card animated-card">
+          <div class="tech-icon">☁️</div>
+          <h3>Cloud & DevOps</h3>
+          <p>AWS, Docker, Kubernetes, GitHub Actions, CI/CD</p>
+        </div>
+        <div class="tech-card animated-card">
+          <div class="tech-icon">📊</div>
+          <h3>ERP Systems</h3>
+          <p>Frappe, ERPNext, Odoo, SAP, Zoho</p>
+        </div>
+      </div>
+    </section>
+    <style>
+      .tech-card {
+        background: rgba(255,255,255,0.35);
+        padding: 25px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.3);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        transition: transform .3s ease, box-shadow .3s ease;
+      }
+      .tech-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+      }
+      .tech-icon {
+        font-size: 40px;
+        margin-bottom: 12px;
+        animation: float 3s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+    </style>
+
+    <style>
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+      }
+      .tech-card {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .tech-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+      }
+      .tech-card h3 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        color: #1e2a42;
+      }
+      .tech-card p {
+        color: #60748d;
+        line-height: 1.5;
+      }
+    </style>
+
+    <section id="faq" style="margin-top:60px">
+      <h2><div class="section-title">Why Choose Us</div></h2>
+      <div class="card" style="padding:20px;margin-top:16px">
+        <h3>What We Provide</h3>
+        <p style="color:var(--muted)">Complete end‑to‑end IT solutions — ERP, automation, cloud, development, and managed services — everything under one roof.</p>
+
+        <h3 style="margin-top:20px">Why Choose Streamline Automation?</h3>
+        <ul style="color:var(--muted);margin:10px 0 0 18px;line-height:1.6">
+          <li>Expertise in modern technologies and enterprise‑grade systems.</li>
+          <li>Deep understanding of business workflows and automation.</li>
+          <li>Scalable architectures designed for long‑term stability.</li>
+          <li>Transparent communication and fast turnaround.</li>
+          <li>Dedicated long‑term support for every project.</li>
+        </ul>
+
+        <h3 style="margin-top:20px">What Makes Us Different?</h3>
+        <ul style="color:var(--muted);margin:10px 0 0 18px;line-height:1.6">
+          <li>We focus on performance, automation, and scalability — not just development.</li>
+          <li>We deliver production‑ready, secure, optimized solutions.</li>
+          <li>Specialized in ERP + DevOps + full‑stack ecosystem.</li>
+          <li>Custom solutions, not pre‑made templates.</li>
         </ul>
       </div>
+    </section>
 
-      <div class="service-card">
-        <h3>Web & App Development</h3>
-        <p>High-performance web and mobile applications.</p>
-        <ul>
-          <li>Frontend: React, Vue, Next.js, Nuxt.js</li>
-          <li>Backend: Node.js, Django, Flask, Laravel</li>
-          <li>Mobile: Flutter, React Native</li>
-        </ul>
+    <footer>
+      <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div>&copy; <strong>Streamline Automation</strong> — All rights reserved.</div>
+        <div style="color:var(--muted);font-size:14px">Built with focus on reliability & performance</div>
       </div>
+    </footer>
+  </main>
 
-      <div class="service-card">
-        <h3>Cloud, Infra & DevOps</h3>
-        <p>Secure, scalable cloud & infrastructure management.</p>
-        <ul>
-          <li>AWS, Azure, GCP Cloud Setup</li>
-          <li>Docker, Kubernetes, CI/CD</li>
-          <li>Load Balancing, Auto Scaling</li>
-        </ul>
-      </div>
+  <script>
+    // Quick handlers — currently they just show a friendly alert. Replace with actual submission logic.
+    function handleQuick(e){
+      e.preventDefault();
+      const fm = new FormData(e.target);
+      alert('Thanks ' + fm.get('name') + '! We received your quick request.');
+      e.target.reset();
+      return false;
+    }
+    function handleContact(e){
+      e.preventDefault();
+      const fm = new FormData(e.target);
+      alert('Thanks ' + fm.get('name') + '! We will contact you at ' + fm.get('email'));
+      e.target.reset();
+      return false;
+    }
 
-      <div class="service-card">
-        <h3>Database Scaling & Optimization</h3>
-        <p>High-performance database tuning and replication.</p>
-        <ul>
-          <li>MySQL / MariaDB</li>
-          <li>PostgreSQL</li>
-          <li>MongoDB</li>
-          <li>Redis Caching</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- TECHNOLOGY STACK -->
-  <section class="technology" id="technology">
-    <h2>Technology Stack</h2>
-    <div class="tech-grid">
-
-      <div class="tech-card">
-        <h4>Frontend</h4>
-        <p>React, Vue, Angular, Next.js, Tailwind CSS</p>
-      </div>
-
-      <div class="tech-card">
-        <h4>Backend</h4>
-        <p>Python, Django, Node.js, PHP, Java Spring Boot</p>
-      </div>
-
-      <div class="tech-card">
-        <h4>Cloud & DevOps</h4>
-        <p>AWS, Docker, Kubernetes, GitHub Actions, CI/CD</p>
-      </div>
-
-      <div class="tech-card">
-        <h4>ERP Systems</h4>
-        <p>Frappe, ERPNext, Odoo, SAP, Zoho</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- WHY US / FAQ -->
-  <section class="whyus" id="whyus">
-    <h2>Why Choose Streamline Automation?</h2>
-
-    <div class="faq">
-      <h3>What We Provide</h3>
-      <p>We provide complete digital transformation solutions — ERP, CRM, automation, IT infra, cloud scaling, custom software, and full technical consulting.</p>
-
-      <h3>Why Choose Us</h3>
-      <p>We combine strong technical expertise with business understanding, delivering systems that actually streamline your operations.</p>
-
-      <h3>Why We Are Different</h3>
-      <p>We focus on performance, scalability and long-term reliability instead of just delivering basic software. We build systems that grow with your business.</p>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-
-    <p>Email: <b>info.streamline.automation@gmail.com</b></p>
-
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdXXXXX/formResponse" method="POST" target="_blank" class="contact-form">
-      <input type="text" name="entry.name" placeholder="Your Name" required>
-      <input type="email" name="entry.email" placeholder="Your Email" required>
-      <textarea name="entry.message" placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-
-    <div class="social-icons">
-      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    © 2025 Streamline Automation — All Rights Reserved
-  </footer>
-
+    // Google Form link injection: replace the URL below with your Google Form share link
+    const googleFormURL = '';
+    const btn = document.getElementById('googleFormBtn');
+    if(googleFormURL && btn){ btn.href = googleFormURL; btn.target = '_blank'; } else if(btn){ btn.href = 'https://forms.google.com'; btn.target = '_blank'; }
+  </script>
 </body>
 </html>
